@@ -57,6 +57,7 @@ public:
 	 */
 	void input(const ipts::samples::DftWindow &dft)
 	{
+		m_stylus.commit = false;
 		switch (dft.type) {
 		case ipts::protocol::dft::Type::Position:
 			this->handle_position(dft);
@@ -97,6 +98,7 @@ private:
 	 */
 	void handle_position(const ipts::samples::DftWindow &dft)
 	{
+		m_stylus.commit = true;
 		if (dft.x.size() <= 1) {
 			this->lift();
 			return;

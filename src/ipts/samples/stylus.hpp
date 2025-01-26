@@ -42,6 +42,8 @@ struct Stylus {
 	//! The direction in which the stylus tip is pointing.
 	//! Unit: Radians
 	f64 azimuth = 0;
+
+	bool commit = false;
 };
 
 } // namespace iptsd::ipts::samples

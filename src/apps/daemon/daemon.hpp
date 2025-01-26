@@ -86,7 +86,9 @@ public:
 				m_touch->disable();
 		}
 
-		m_stylus->update(stylus);
+		if (stylus.commit) {
+			m_stylus->update(stylus);
+		}
 	}
 };
 
